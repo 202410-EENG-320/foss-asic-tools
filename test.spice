@@ -1,0 +1,17 @@
+** sch_path: /foss/designs/test.sch
+**.subckt test
+R1 Vout Vin 1k m=1
+C1 Vout GND 1u m=1
+V1 Vin GND PULSE(0 1 0 0.1m 0.1m 1m 2m)
+.save i(v1)
+**** begin user architecture code
+
+
+.tran 1u 10m
+.save all
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end
